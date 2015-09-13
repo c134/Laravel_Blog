@@ -1,0 +1,9 @@
+@extends('app')
+@section('content')
+    <h1>{{$article->title}}</h1>
+    <hr/>
+    <article>
+        {{$article->image}}
+        {{$article->body}}
+    </article>
+@stop
