@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-//use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-use Request;
+
 
 class ArticlesController extends Controller
 {
@@ -17,10 +16,10 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
 
-    public function store()
+    public function store(Requests\ArticleRequest $request)
     {
-        $input = Request::all();
-        Article::create($input);
+
+        Article::create($request->all());
         return redirect('articles');
     }
 
