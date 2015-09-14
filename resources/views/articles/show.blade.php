@@ -1,9 +1,11 @@
 @extends('app')
 @section('content')
-    <h1>{{$article->title}}</h1>
+    <h1>Articles</h1>
     <hr/>
     <article>
-        {{$article->image}}
-        {{$article->body}}
+        <h1>{{$article->title}}</h1>
+        <article>
+            {{$article->body}}
+        </article>
     </article>
 @stop
