@@ -25,7 +25,7 @@ class ArticleRequest extends Request
     {
         return [
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
         ];
     }
 }
