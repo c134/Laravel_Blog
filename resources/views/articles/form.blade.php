@@ -9,7 +9,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::file('image',null,['class' => 'form-control']) !!}
+    {!! Form::file('file',['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
