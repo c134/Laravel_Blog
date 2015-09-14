@@ -7,14 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Input;
+use Intervention\Image\Facades\Image;
 
 class ArticlesController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $articles = Article::all();
         return view('articles.index', compact('articles'));
     }
+
     public function create()
     {
         return view('articles.create');
@@ -22,8 +25,20 @@ class ArticlesController extends Controller
 
     public function store(ArticleRequest $request)
     {
-        Article::create($request->all());
-        return redirect('articles');
+        if ($request->hasFile('file')) {
+
+            $file = Input::file('file');
+            $imgTitle = $request->title;
+            $imagePath = 'uploads/' . $imgTitle . '.jpg';
+            $request->image_path = $imagePath;
+
+            Article::create(array('title' => $request->title,
+                'body' => $request->body,
+                'image_path' => $imagePath));
+
+            Image::make($file)->resize(300, 200)->save($imagePath);
+        }
+
     }
 
     public function show(Article $article)
