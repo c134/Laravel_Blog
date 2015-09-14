@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "barryvdh/laravel-ide-helper": "v2.1.0",
         "doctrine/dbal": "2.6.x-dev",
-        "illuminate/html": "v5.0.0"
+        "illuminate/html": "v5.0.0",
+        "intervention/image": "2.3.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
