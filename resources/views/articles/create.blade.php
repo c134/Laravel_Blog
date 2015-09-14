@@ -2,7 +2,7 @@
 @section('content')
     <h1>Write a new Article</h1>
     <hr/>
-    {!! Form::open(['url'=>'articles']) !!}
+    {!! Form::open(array('url'=>'articles', 'files' => true)) !!}
     @include('articles.form',['submitButtonText' => 'Add Article'])
     {!! Form::close() !!}
     @include('errors.list')
