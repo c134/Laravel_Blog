@@ -16,7 +16,7 @@ class CreateArticleTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
-            $table->binary('image');
+            $table->string('image_path');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateArticleTable extends Migration
      */
     public function down()
     {
-        Schema::drop('article');
+        Schema::drop('articles');
     }
 }
