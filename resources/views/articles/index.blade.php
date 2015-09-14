@@ -11,4 +11,7 @@
             <div class="body">{{$article->body}}</div>
         </article>
     @endforeach
+    <a href="{{action('ArticlesController@create')}}" >
+        <button class="btn btn-default" style="margin-top: 50px">Create Article</button>
+    </a>
 @stop
