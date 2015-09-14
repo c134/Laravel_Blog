@@ -1,11 +1,13 @@
 @extends('app')
 @section('content')
-    <h1>Articles</h1>
+    <h1>{{$article->title}}</h1>
     <hr/>
     <article>
-        <h1>{{$article->title}}</h1>
-        <article>
-            {{$article->body}}
-        </article>
+        <img src="{{asset($article->image_path)}}" alt="{{$article->title}}">
+
+        <p>{{$article->body}}</p>
     </article>
+     <a href="{{action('ArticlesController@index')}}">
+        <button class="btn btn-default">Back to articles</button>
+    </a>
 @stop
