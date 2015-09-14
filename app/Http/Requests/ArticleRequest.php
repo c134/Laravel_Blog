@@ -13,7 +13,7 @@ class ArticleRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,9 +24,8 @@ class ArticleRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required|min3',
-            'body' => 'required',
-            'image'=> 'required'
+            'title' => 'required',
+            'body' => 'required'
         ];
     }
 }
