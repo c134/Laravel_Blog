@@ -13,10 +13,5 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('Url', 'Url:') !!}
-    {!! Form::text('url', null ,['class' => 'form-control', 'id' =>'urlInput']) !!}
-</div>
-
-<div class="form-group">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control', 'id' => 'submitButton']) !!}
 </div>
