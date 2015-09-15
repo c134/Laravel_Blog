@@ -38,11 +38,29 @@ class ArticlesController extends Controller
 
             Image::make($file)->resize(300, 200)->save($imagePath);
         }
+        else{
+            $url = 'https://ajax.googleapis.com/ajax/services/search/images?v=1.0&rsz=1&q=' . $request->title;
+            $url = file_get_contents($url);
+            $file = json_decode($url);
+            $file = $file->responseData->results[0]->url;
+            $imgTitle = $request->title;
+            $imagePath = 'uploads/' . $imgTitle . '.jpg';
+            $request->image_path = $imagePath;
+
+            Article::create(array('title' => $request->title,
+                'body' => $request->body,
+                'image_path' => $imagePath));
+
+            Image::make($file)->resize(300, 200)->save($imagePath);
+        }
 
     }
+
 
     public function show(Article $article)
     {
         return view('articles.show', compact('article'));
     }
+
+
 }
