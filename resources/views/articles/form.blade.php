@@ -1,6 +1,6 @@
 <div class="form-group">
     {!! Form::label('title', 'Title:') !!}
-    {!! Form::text('title', null, ['class' => 'form-control']) !!}
+    {!! Form::text('title', null, ['class' => 'form-control', 'id' =>'articleTitle']) !!}
 </div>
 
 <div class="form-group">
@@ -9,9 +9,14 @@
 </div>
 
 <div class="form-group">
-    {!! Form::file('file',['class' => 'form-control']) !!}
+    {!! Form::file('file',['class' => 'form-control', 'id' =>'fileUploadInput']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
+    {!! Form::label('Url', 'Url:') !!}
+    {!! Form::text('url', null ,['class' => 'form-control', 'id' =>'urlInput']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control', 'id' => 'submitButton']) !!}
 </div>
