@@ -9,6 +9,7 @@ class Article extends Model
     protected $fillable = [
         'title',
         'body',
-        'image_path'
+        'image_path',
+        'published_at'
     ];
 }
