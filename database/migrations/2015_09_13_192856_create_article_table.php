@@ -18,6 +18,7 @@ class CreateArticleTable extends Migration
             $table->text('body');
             $table->string('image_path');
             $table->timestamps();
+            $table->timestamp('published_at');
         });
     }
 
