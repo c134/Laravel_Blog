@@ -7,7 +7,10 @@
 
         <p>{{$article->body}}</p>
     </article>
-     <a href="{{action('ArticlesController@index')}}">
+    <a href="{{action('ArticlesController@index')}}">
         <button class="btn btn-default">Back to articles</button>
+    </a>
+    <a href="{{action("ArticlesController@edit", [$article->id])}}" style="text-decoration: none">
+        <button class="btn btn-default">Edit article</button>
     </a>
 @stop
