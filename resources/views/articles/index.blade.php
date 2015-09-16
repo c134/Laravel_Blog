@@ -9,9 +9,10 @@
             </h2>
 
             <div class="body">{{$article->body}}</div>
+            {{$article->published_at}}
         </article>
     @endforeach
     <a href="{{action('ArticlesController@create')}}" >
-        <button class="btn btn-default" style="margin-top: 50px">Create Article</button>
+        <button class="btn btn-default form-control" style="margin-top: 50px">Create Article</button>
     </a>
 @stop
